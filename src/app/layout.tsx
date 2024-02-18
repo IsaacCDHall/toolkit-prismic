@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sen } from "next/font/google";
 import "./globals.css";
+import Header from "@/app/components/Header";
 
 const sen = Sen({ subsets: ["latin"] });
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-stone-900 text-stone-100">
-      <body className={sen.className}>{children}</body>
+      <body className={sen.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
