@@ -93,7 +93,8 @@ const GeoHero = ({ slice }: GeoHeroProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="geoHero-desc block bg-gradient-to-tr from-pink-500 via-stone-200 to-teal-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent md-text-4xl opacity-1">
+          {/* NOTE hover placeholder for cta action */}
+          <span className="geoHero-desc block bg-gradient-to-tr hover:bg-gradient-to-tl from-pink-700 via-teal-500 to-indigo-900 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent md-text-4xl opacity-1">
             {slice.primary.desc}
           </span>
         </div>
