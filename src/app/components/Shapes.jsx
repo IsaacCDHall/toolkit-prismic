@@ -36,17 +36,17 @@ function Geometries() {
   const geometries = [
     {
       position: [2.0, 1.6, -4],
-      r: 0.6,
+      r: 0.45,
       geometry: new THREE.IcosahedronGeometry(1.5), // Jewel
     },
     {
       position: [-1.2, -0.75, 5],
-      r: 0.4,
+      r: 0.65,
       geometry: new THREE.TorusGeometry(0.6, 0.25, 16, 32), // Circle
     },
     {
       position: [0,0,0],
-      r: 0.25,
+      r: 0.3,
       geometry: new THREE.OctahedronGeometry(3), // Octahedron
     },
   ];
