@@ -632,14 +632,14 @@ export type GeoHeroSlice = prismic.SharedSlice<
  */
 export interface MarqueeTileSliceDefaultPrimary {
   /**
-   * Heading field in *MarqueeTile → Primary*
+   * title field in *MarqueeTile → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: marquee_tile.primary.heading
+   * - **API ID Path**: marquee_tile.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  heading: prismic.KeyTextField;
+  title: prismic.KeyTextField;
 }
 
 /**
@@ -647,24 +647,24 @@ export interface MarqueeTileSliceDefaultPrimary {
  */
 export interface MarqueeTileSliceDefaultItem {
   /**
-   * item name field in *MarqueeTile → Items*
+   * name field in *MarqueeTile → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: marquee_tile.items[].item_name
+   * - **API ID Path**: marquee_tile.items[].name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  item_name: prismic.KeyTextField;
+  name: prismic.KeyTextField;
 
   /**
-   * item color field in *MarqueeTile → Items*
+   * color field in *MarqueeTile → Items*
    *
    * - **Field Type**: Color
    * - **Placeholder**: *None*
-   * - **API ID Path**: marquee_tile.items[].item_color
+   * - **API ID Path**: marquee_tile.items[].color
    * - **Documentation**: https://prismic.io/docs/field#color
    */
-  item_color: prismic.ColorField;
+  color: prismic.ColorField;
 }
 
 /**

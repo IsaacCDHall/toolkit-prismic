@@ -3,9 +3,9 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
+			"title": {
 				"__TYPE__": "FieldContent",
-				"value": "guard",
+				"value": "done",
 				"type": "Text"
 			}
 		},
@@ -14,19 +14,19 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"item_color",
+						"name",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "#9850de",
-							"type": "Color"
+							"value": "rule",
+							"type": "Text"
 						}
 					],
 					[
-						"item_name",
+						"color",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "military",
-							"type": "Text"
+							"value": "#613564",
+							"type": "Color"
 						}
 					]
 				]
