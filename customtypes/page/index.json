@@ -17,10 +17,10 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "marquee_tile": {
+            "content_index": {
               "type": "SharedSlice"
             },
-            "alternate_grid": {
+            "marquee_tile": {
               "type": "SharedSlice"
             },
             "about_hero": {
