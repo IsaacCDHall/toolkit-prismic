@@ -24,6 +24,7 @@ const AlternateGrid = ({ slice }: AlternateGridProps): JSX.Element => {
       >
         {isFilled.image(slice.primary.image) && (
           <PrismicNextImage
+            alt={slice.primary.image.alt || "default description of the image"}
             field={slice.primary.image}
             className={`
               				es-alternate-grid__image

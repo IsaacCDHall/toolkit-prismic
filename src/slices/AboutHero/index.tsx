@@ -25,7 +25,7 @@ const AboutHero = ({ slice }: AboutHeroProps): JSX.Element => {
       ref={component}
     >
       <div className="grid gap-x-8 gap-y-6 md:grid-cols-[2fr,1fr]">
-        <Heading as="h1" className="col-start-1">
+        <Heading size="xl" as="h1" className="col-start-1">
           {slice.primary.heading}
         </Heading>
         <div className="prose prose-xl prose-stone prose-invert col-start-1">
