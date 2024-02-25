@@ -69,7 +69,10 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = AboutHeroSlice;
+type PageDocumentDataSlicesSlice =
+  | MarqueeTileSlice
+  | AlternateGridSlice
+  | AboutHeroSlice;
 
 /**
  * Content for Page documents
@@ -375,6 +378,191 @@ export type AboutHeroSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *AlternateGrid → Primary*
+ */
+export interface AlternateGridSliceDefaultPrimary {
+  /**
+   * eyebrowHeadline field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Eyebrow
+   * - **API ID Path**: alternate_grid.primary.eyebrowHeadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrowHeadline: prismic.KeyTextField;
+
+  /**
+   * title field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *AlternateGrid → Items*
+ */
+export interface AlternateGridSliceDefaultItem {
+  /**
+   * title field in *AlternateGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *AlternateGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AlternateGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AlternateGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AlternateGridSliceDefaultPrimary>,
+  Simplify<AlternateGridSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *AlternateGrid → Primary*
+ */
+export interface AlternateGridSliceImageRightPrimary {
+  /**
+   * eyebrowHeadline field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Eyebrow
+   * - **API ID Path**: alternate_grid.primary.eyebrowHeadline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  eyebrowHeadline: prismic.KeyTextField;
+
+  /**
+   * title field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *AlternateGrid → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *AlternateGrid → Items*
+ */
+export interface AlternateGridSliceImageRightItem {
+  /**
+   * title field in *AlternateGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *AlternateGrid → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: alternate_grid.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Image Right variation for AlternateGrid Slice
+ *
+ * - **API ID**: `imageRight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AlternateGridSliceImageRight = prismic.SharedSliceVariation<
+  "imageRight",
+  Simplify<AlternateGridSliceImageRightPrimary>,
+  Simplify<AlternateGridSliceImageRightItem>
+>;
+
+/**
+ * Slice variation for *AlternateGrid*
+ */
+type AlternateGridSliceVariation =
+  | AlternateGridSliceDefault
+  | AlternateGridSliceImageRight;
+
+/**
+ * AlternateGrid Shared Slice
+ *
+ * - **API ID**: `alternate_grid`
+ * - **Description**: AlternateGrid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AlternateGridSlice = prismic.SharedSlice<
+  "alternate_grid",
+  AlternateGridSliceVariation
+>;
+
+/**
  * Primary content in *GeoHero → Primary*
  */
 export interface GeoHeroSliceDefaultPrimary {
@@ -439,6 +627,76 @@ export type GeoHeroSlice = prismic.SharedSlice<
   GeoHeroSliceVariation
 >;
 
+/**
+ * Primary content in *MarqueeTile → Primary*
+ */
+export interface MarqueeTileSliceDefaultPrimary {
+  /**
+   * Heading field in *MarqueeTile → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee_tile.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MarqueeTile → Items*
+ */
+export interface MarqueeTileSliceDefaultItem {
+  /**
+   * item name field in *MarqueeTile → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee_tile.items[].item_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  item_name: prismic.KeyTextField;
+
+  /**
+   * item color field in *MarqueeTile → Items*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee_tile.items[].item_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  item_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for MarqueeTile Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeTileSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MarqueeTileSliceDefaultPrimary>,
+  Simplify<MarqueeTileSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *MarqueeTile*
+ */
+type MarqueeTileSliceVariation = MarqueeTileSliceDefault;
+
+/**
+ * MarqueeTile Shared Slice
+ *
+ * - **API ID**: `marquee_tile`
+ * - **Description**: MarqueeTile
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeTileSlice = prismic.SharedSlice<
+  "marquee_tile",
+  MarqueeTileSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -463,10 +721,23 @@ declare module "@prismicio/client" {
       AboutHeroSliceDefaultPrimary,
       AboutHeroSliceVariation,
       AboutHeroSliceDefault,
+      AlternateGridSlice,
+      AlternateGridSliceDefaultPrimary,
+      AlternateGridSliceDefaultItem,
+      AlternateGridSliceImageRightPrimary,
+      AlternateGridSliceImageRightItem,
+      AlternateGridSliceVariation,
+      AlternateGridSliceDefault,
+      AlternateGridSliceImageRight,
       GeoHeroSlice,
       GeoHeroSliceDefaultPrimary,
       GeoHeroSliceVariation,
       GeoHeroSliceDefault,
+      MarqueeTileSlice,
+      MarqueeTileSliceDefaultPrimary,
+      MarqueeTileSliceDefaultItem,
+      MarqueeTileSliceVariation,
+      MarqueeTileSliceDefault,
     };
   }
 }

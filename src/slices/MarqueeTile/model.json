@@ -1,0 +1,41 @@
+{
+  "id": "marquee_tile",
+  "type": "SharedSlice",
+  "name": "MarqueeTile",
+  "description": "MarqueeTile",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "item_name": {
+          "type": "Text",
+          "config": {
+            "label": "item name",
+            "placeholder": ""
+          }
+        },
+        "item_color": {
+          "type": "Color",
+          "config": {
+            "label": "item color",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

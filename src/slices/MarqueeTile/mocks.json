@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "guard",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"item_color",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "#9850de",
+							"type": "Color"
+						}
+					],
+					[
+						"item_name",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "military",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]
